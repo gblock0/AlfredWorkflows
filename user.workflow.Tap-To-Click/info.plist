@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string></string>
+	<key>connections</key>
+	<dict>
+		<key>7F98C58D-1B48-44ED-A497-C018F9A66BED</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>59E9063D-3E71-440D-B1FA-F6D96749DB6A</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string></string>
+	<key>description</key>
+	<string></string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Toggle Tap to Click</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>tap</string>
+				<key>text</key>
+				<string>Toggle Tap to Click</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>7F98C58D-1B48-44ED-A497-C018F9A66BED</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>script</key>
+				<string>on alfred_script(q)
+-- open trackpad preferencestell application "System Preferences"	activate	reveal (pane id "com.apple.preference.trackpad")end telltell application "System Events"	tell process "System Preferences"		click radio button "Point &amp; Click" of tab group 1 of window "Trackpad"				-- tap to click		tell checkbox 1 of tab group 1 of window "Trackpad"			repeat until exists				delay 0.2			end repeat			if value is not 2 then click		end tell				click button "Show All" of group 1 of group 2 of tool bar 1 of window 1				-- hide system preferences		set visible to false	end tellend tell
+
+
+end alfred_script</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>63F37406-50A3-4DBA-83F0-E8368FC7B78E</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)
+-- open trackpad preferencestell application "System Preferences"	activate	reveal (pane id "com.apple.preference.trackpad")end telltell application "System Events"	tell process "System Preferences"		click radio button "Point &amp; Click" of tab group 1 of window "Trackpad"				-- tap to click		tell checkbox 1 of tab group 1 of window "Trackpad"			repeat until exists				delay 0.2			end repeat			if value is not 2 then click		end tell				click button "Show All" of group 1 of group 2 of tool bar 1 of window 1				-- hide system preferences		set visible to false	end tellend tell
+
+
+end alfred_script</string>
+				<key>cachescript</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>59E9063D-3E71-440D-B1FA-F6D96749DB6A</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>59E9063D-3E71-440D-B1FA-F6D96749DB6A</key>
+		<dict>
+			<key>ypos</key>
+			<real>250</real>
+		</dict>
+		<key>63F37406-50A3-4DBA-83F0-E8368FC7B78E</key>
+		<dict>
+			<key>ypos</key>
+			<real>130</real>
+		</dict>
+		<key>7F98C58D-1B48-44ED-A497-C018F9A66BED</key>
+		<dict>
+			<key>ypos</key>
+			<real>130</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string></string>
+</dict>
+</plist>
